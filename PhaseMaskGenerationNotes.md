@@ -1,4 +1,5 @@
-# Notes, 18Jul2026
+# Notes July 2026
+## Notes, 18Jul2026
 
 Modifications on Jupyter notebook:
 
