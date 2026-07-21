@@ -28,3 +28,18 @@ Modifications on Jupyter notebook:
              else:
                  zeroMatGPS[rDimOff:-rDimOff,rDimOff:-rDimOff] =\
                      cp.exp(1j*PHIslm) # Padded matrix with SLM phase.
+
+
+## Notes, 20Jul2026
+
+On 18 July, the main way to speed up the calculation was to change from numpy to cupy in the ElementaryPattern SUM function
+      
+      def SumElementaryPatterns_v01(fm, BlazedPhL):
+          ExpIBphL = [ fm[qq]*np.exp(1j*BlazedPhL[qq]) for qq in range(len(fm)) ]
+          ExpIBphL = np.array(ExpIBphL)
+          ASLM = np.sum(ExpIBphL, axis = 0)
+          return ASLM
+
+
+
+
